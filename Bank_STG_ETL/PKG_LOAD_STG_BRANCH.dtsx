@@ -9,10 +9,10 @@
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="PKG_LOAD_STG_BRANCH"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{9D2FDF92-5846-40B4-A7E3-271704ACD46A}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{5230A6BB-7D85-4831-A10C-22BDAC3A4DED}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -160,7 +160,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="FST_Move_To_Archive"
       DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <FileSystemData
@@ -180,7 +180,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="FST_Move_To_Error"
       DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <FileSystemData
@@ -1834,6 +1834,185 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:To="Package\FST_Move_To_Error"
       DTS:Value="1" />
   </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{63F125DE-82D8-4186-8684-D8BE2893606C}"
+      DTS:EventID="-1"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{62884F36-5C8F-465F-977C-4C65F3B17BB9}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\ask FAILURE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8cab75f6-68d6-41ac-bdee-b5cb8cffe70f}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ask FAILURE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3FAF74E9-F228-4EF7-84A1-3D39177D93B0}"
+              SQLTask:SqlStatementSource="UPDATE dbo.SSIS_Task_Log&#xA;SET&#xA;    EndTime   = GETDATE(),&#xA;    Status    = 'FAILED',&#xA;    ErrorMsg  = ?&#xA;WHERE ExecutionID = ?&#xA;  AND PackageName = ?&#xA;  AND TaskName = ?&#xA;  AND Status = 'RUNNING';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="500" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="200" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="300" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="500" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPostExecute]"
+      DTS:CreationName="OnPostExecute"
+      DTS:DTSID="{145A9500-9834-490B-B1E0-9F98A8BC22D8}"
+      DTS:EventID="0"
+      DTS:EventName="OnPostExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{57BAEDA0-54BE-4591-91A0-989B4091B57E}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\Task SUCCESS"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{fe19e213-af98-431e-af3e-7536eb538e63}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Task SUCCESS"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3FAF74E9-F228-4EF7-84A1-3D39177D93B0}"
+              SQLTask:SqlStatementSource="UPDATE dbo.SSIS_Task_Log&#xA;SET&#xA;    EndTime = GETDATE(),&#xA;    Status  = 'SUCCESS'&#xA;WHERE ExecutionID = ?&#xA;  AND PackageName = ?&#xA;  AND TaskName = ?&#xA;  AND Status = 'RUNNING';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="200" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="300" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="500" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPreExecute]"
+      DTS:CreationName="OnPreExecute"
+      DTS:DTSID="{DB7A2B90-7D6F-48A6-BE21-05F6EA2249E9}"
+      DTS:EventID="7077990"
+      DTS:EventName="OnPreExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{F863111A-2F06-4882-B04E-89DAF1684A12}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPreExecute]\Log_Task_Start"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{fb89668d-6bb2-4f10-8697-2e06a1e20e53}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log_Task_Start"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3FAF74E9-F228-4EF7-84A1-3D39177D93B0}"
+              SQLTask:SqlStatementSource="INSERT INTO dbo.SSIS_Task_Log&#xA;(&#xA;    ExecutionID,&#xA;    PackageName,&#xA;    TaskName,&#xA;    StartTime,&#xA;    Status&#xA;)&#xA;VALUES&#xA;(&#xA;    ?, ?, ?, GETDATE(), 'RUNNING'&#xA;);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="200" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="300" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="500" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -1847,10 +2026,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="216,42.6666666666667"
-          Id="Package\PKG_LOAD_STG_BRANCH"
-          TopLeft="244.374989075587,36.9473680153778" />
-        <NodeLayout
           Size="192,42.6666666666667"
           Id="Package\FST_Move_To_Archive"
           TopLeft="99.9999955296519,147.105261542708" />
@@ -1858,6 +2033,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="180,42.6666666666667"
           Id="Package\FST_Move_To_Error"
           TopLeft="398.749982174487,140.947366873478" />
+        <NodeLayout
+          Size="216,42.6666666666667"
+          Id="Package\PKG_LOAD_STG_BRANCH"
+          TopLeft="244.374989075587,36.9473680153778" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="317.70832240892,79.6140346820445">
@@ -1894,37 +2073,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="387.041655742253,79.6140346820445">
+          TopLeft="387.041655742254,79.6140346820445">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="101.708326432233,61.3333321914339"
+              EndConnector="101.708326432233,61.3333321914335"
               Start="0,0"
-              End="101.708326432233,53.8333321914339">
+              End="101.708326432233,53.8333321914335">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.8039211068299" />
+                    End="0,20.8039211068297" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.8039211068299"
-                    Point2="0,24.8039211068299"
-                    Point3="4,24.8039211068299" />
+                    Point1="0,20.8039211068297"
+                    Point2="0,24.8039211068297"
+                    Point3="4,24.8039211068297" />
                   <mssgle:LineSegment
-                    End="97.7083264322333,24.8039211068299" />
+                    End="97.7083264322334,24.8039211068297" />
                   <mssgle:CubicBezierSegment
-                    Point1="97.7083264322333,24.8039211068299"
-                    Point2="101.708326432233,24.8039211068299"
-                    Point3="101.708326432233,28.8039211068299" />
+                    Point1="97.7083264322334,24.8039211068297"
+                    Point2="101.708326432233,24.8039211068297"
+                    Point3="101.708326432233,28.8039211068297" />
                   <mssgle:LineSegment
-                    End="101.708326432233,53.8333321914339" />
+                    End="101.708326432233,53.8333321914335" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="35.6128155598666,29.8039211068299,30.4826953125,9.7490234375"
+              BoundingBox="35.6128155598667,29.8039211068297,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1932,7 +2111,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Text="success"
           ParentId="Package"
           FontInfo="{assembly:Null}"
-          Size="68,60"
+          Size="68,40"
           Id="4a61860b-b653-4d03-b35a-9eac0e0f0757"
           TopLeft="188.749991562218,70.4736834367392" />
       </GraphLayout>
@@ -1944,51 +2123,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\PKG_LOAD_STG_BRANCH\Flat File Source"
-          TopLeft="227.499989829958,19.8421050452955" />
+          Size="165.333333333334,42.6666666666667"
+          Id="Package\PKG_LOAD_STG_BRANCH\Script Component"
+          TopLeft="420.624981196598,153.947366730741" />
         <NodeLayout
           Size="174.666666666667,42.6666666666667"
           Id="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination"
           TopLeft="95.6249957252296,137.526314279462" />
-        <EdgeLayout
-          Id="Package\PKG_LOAD_STG_BRANCH.Paths[Flat File Source Output]"
-          TopLeft="304.833323163291,62.5087717119622">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-121.874994104728,75.0175425674998"
-              Start="0,0"
-              End="-121.874994104728,67.5175425674998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.5087712837499" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.5087712837499"
-                    Point2="0,37.5087712837499"
-                    Point3="-4,37.5087712837499" />
-                  <mssgle:LineSegment
-                    End="-117.874994104728,37.5087712837499" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-117.874994104728,37.5087712837499"
-                    Point2="-121.874994104728,37.5087712837499"
-                    Point3="-121.874994104728,41.5087712837499" />
-                  <mssgle:LineSegment
-                    End="-121.874994104728,67.5175425674998" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="184,42.6666666666667"
+          Id="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1"
+          TopLeft="282.499987371266,226.47368172389" />
         <NodeLayout
           Size="156,42.6666666666667"
           Id="Package\PKG_LOAD_STG_BRANCH\Derived Column"
           TopLeft="399.999982118607,75.9473675871656" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\PKG_LOAD_STG_BRANCH\Flat File Source"
+          TopLeft="227.499989829958,19.8421050452955" />
         <EdgeLayout
           Id="Package\PKG_LOAD_STG_BRANCH.Paths[Flat File Source Error Output]"
           TopLeft="382.166656496624,41.1754383786288">
@@ -2019,10 +2172,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="165.333333333334,42.6666666666667"
-          Id="Package\PKG_LOAD_STG_BRANCH\Script Component"
-          TopLeft="420.624981196598,153.947366730741" />
         <EdgeLayout
           Id="Package\PKG_LOAD_STG_BRANCH.Paths[Derived Column Output]"
           TopLeft="477.999982118607,118.614034253832">
@@ -2054,13 +2203,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="184,42.6666666666667"
-          Id="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1"
-          TopLeft="282.499987371266,226.47368172389" />
         <EdgeLayout
           Id="Package\PKG_LOAD_STG_BRANCH.Paths[Output 0]"
           TopLeft="503.291647863265,196.614033397408">
@@ -2092,7 +2239,45 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PKG_LOAD_STG_BRANCH.Paths[Flat File Source Output]"
+          TopLeft="304.833323163291,62.5087717119622">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-121.874994104728,75.0175425674998"
+              Start="0,0"
+              End="-121.874994104728,67.5175425674998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5087712837499" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.5087712837499"
+                    Point2="0,37.5087712837499"
+                    Point3="-4,37.5087712837499" />
+                  <mssgle:LineSegment
+                    End="-117.874994104728,37.5087712837499" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-117.874994104728,37.5087712837499"
+                    Point2="-121.874994104728,37.5087712837499"
+                    Point3="-121.874994104728,41.5087712837499" />
+                  <mssgle:LineSegment
+                    End="-121.874994104728,67.5175425674998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2124,5 +2309,41 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package.EventHandlers[OnPreExecute]\Log_Task_Start"
+          TopLeft="421.99998742342,183.999994516373" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package.EventHandlers[OnPostExecute]\Task SUCCESS"
+          TopLeft="450.999986559153,167.99999499321" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="144,42.6666666666667"
+          Id="Package.EventHandlers[OnError]\ask FAILURE"
+          TopLeft="465.999986112118,167.99999499321" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
