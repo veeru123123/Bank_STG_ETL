@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="12/30/2025 3:03:15 PM"
+  DTS:CreationDate="12/30/2025 6:49:40 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="VEERU90"
   DTS:CreatorName="VEERU90\Lenovo"
-  DTS:DTSID="{BAF499DE-9541-4564-B75A-0BEF95E7AF1A}"
+  DTS:DTSID="{D3DACC0E-3ECE-4072-8576-5C54082E2711}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="PKG_LOAD_STG_CUSTOMER"
+  DTS:ObjectName="PKG_LOAD_STG_BRANCH"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{1E814CAA-1539-4942-8336-D617B7881CFE}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{5230A6BB-7D85-4831-A10C-22BDAC3A4DED}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{E45013C2-0CED-4457-AD7E-CC2DE1C1A7CB}"
+      DTS:DTSID="{3CB724F0-39CB-423F-ACD1-13056A20CE95}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::SrcFile]</DTS:PropertyExpression>
@@ -32,15 +32,15 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\ETL_BANKING\SOURCE\stg_customer.csv">
+          DTS:ConnectionString="D:\ETL_BANKING\SOURCE\stg_branch.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:DataType="3"
               DTS:TextQualified="True"
-              DTS:ObjectName="customer_id"
-              DTS:DTSID="{6F1C1B87-03F0-4FCA-9FA7-2ECCCABE30F1}"
+              DTS:ObjectName="branch_id"
+              DTS:DTSID="{2F2B6225-47E7-4700-9129-CA14AEFD925B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,25 +48,8 @@
               DTS:MaximumWidth="100"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="customer_name"
-              DTS:DTSID="{A5911672-CCE7-43B1-A6CE-3058183E4432}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="1"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="gender"
-              DTS:DTSID="{D3608A2E-6A35-4CD0-B0CB-F35086D4C793}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="7"
-              DTS:TextQualified="True"
-              DTS:ObjectName="dob"
-              DTS:DTSID="{E9173198-96EB-495A-9335-4B8E15E01142}"
+              DTS:ObjectName="branch_name"
+              DTS:DTSID="{0BA56145-BD10-47F3-A785-F84FBC7072F7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +58,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="city"
-              DTS:DTSID="{0A85B390-4D2A-41A5-BA2F-EB43E8B4F6B1}"
+              DTS:DTSID="{16FBA02D-E368-46EA-85AD-B9CB83D66A39}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +67,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="state"
-              DTS:DTSID="{C6FBB624-8A56-401F-9679-0399036936F1}"
+              DTS:DTSID="{3ABA86BE-CE95-4B00-96EC-28FB58391A64}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -93,7 +76,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="country"
-              DTS:DTSID="{3224800F-5BBD-4E38-891F-98E992DADB33}"
+              DTS:DTSID="{16B88A5F-08A2-4626-89AF-818F874395AB}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -102,7 +85,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[VEERU90\DEV_6364451994.BANK_STG]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{C4E23A1F-9453-4455-B7F5-6494D8AC5AFD}"
+      DTS:DTSID="{3FAF74E9-F228-4EF7-84A1-3D39177D93B0}"
       DTS:ObjectName="VEERU90\DEV_6364451994.BANK_STG">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">"Data Source=" + @[$Project::Servername] +";Initial Catalog=" + @[$Project::Databasename] + ";Integrated Security=SSPI;"</DTS:PropertyExpression>
@@ -117,65 +100,105 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6199B15A-FB1D-4AF7-BEC6-D5E99ED79B85}"
+      DTS:DTSID="{9B4A245A-5715-492A-882F-5F0417CDD8C3}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Project::ARC_PATH]+&quot;\\&quot;+ @[User::FileName]"
+      DTS:Expression="@[$Project::ARC_PATH]+&quot;\\&quot;+ @[User::Filename]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ArcFile">
       <DTS:VariableValue
-        DTS:DataType="8">D:\ETL_BANKING\ARCHIVE\stg_customer.csv</DTS:VariableValue>
+        DTS:DataType="8">D:\ETL_BANKING\ARCHIVE\stg_branch.csv</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{89D38B44-618C-4459-8C6A-B9E17C9279A0}"
+      DTS:DTSID="{8D46218B-C8FE-4BBD-BF5D-5C2C79373779}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Project::ERR_PATH]+&quot;\\&quot;+ @[User::FileName]"
+      DTS:Expression="@[$Project::ERR_PATH]+&quot;\\&quot;+ @[User::Filename]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ErrFile">
       <DTS:VariableValue
-        DTS:DataType="8">D:\ETL_BANKING\ERROR\stg_customer.csv</DTS:VariableValue>
+        DTS:DataType="8">D:\ETL_BANKING\ERROR\stg_branch.csv</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{29CA9929-88C6-4DD6-B12C-22BA5355A219}"
+      DTS:DTSID="{2988EAF9-EBC0-437E-81AB-D75FCD264F45}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
-      DTS:ObjectName="FileName">
+      DTS:ObjectName="Filename">
       <DTS:VariableValue
-        DTS:DataType="8">stg_customer.csv</DTS:VariableValue>
+        DTS:DataType="8">stg_branch.csv</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{9DD9432D-1D19-4FC2-8ADE-BCF72BC0AAC9}"
+      DTS:DTSID="{673C5EF0-D765-4187-BC98-E818357D892E}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="rowsinserted">
+      DTS:ObjectName="Rowsinserted">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{33BC9EB7-155B-41C1-AC37-215B09853763}"
+      DTS:DTSID="{F242FFBF-593E-4982-8CF1-6D327762569C}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Project::SRC_PATH]+&quot;\\&quot;+ @[User::FileName]"
+      DTS:Expression="@[$Project::SRC_PATH]+&quot;\\&quot;+ @[User::Filename]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SrcFile">
       <DTS:VariableValue
-        DTS:DataType="8">D:\ETL_BANKING\SOURCE\stg_customer.csv</DTS:VariableValue>
+        DTS:DataType="8">D:\ETL_BANKING\SOURCE\stg_branch.csv</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\DFT_Load_STG_Customer"
+      DTS:refId="Package\FST_Move_To_Archive"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{3e778ce1-b2b1-495f-be55-bdc4c925c8b1}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FST_Move_To_Archive"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="MoveFile"
+          TaskSourcePath="User::SrcFile"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::ArcFile"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FST_Move_To_Error"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{cc1089f8-b591-44b4-860a-dbb3b10bf2c0}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FST_Move_To_Error"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="MoveFile"
+          TaskSourcePath="User::SrcFile"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::ErrFile"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PKG_LOAD_STG_BRANCH"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{67F09DFB-5C55-4585-A8E2-57252D4E3535}"
+      DTS:DTSID="{47B42AC1-5687-4E6A-B8C6-950DFC6F0284}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="DFT_Load_STG_Customer"
+      DTS:ObjectName="PKG_LOAD_STG_BRANCH"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -183,83 +206,7 @@
           version="1">
           <components>
             <component
-              refId="Package\DFT_Load_STG_Customer\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DFT_Load_STG_Customer\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT_Load_STG_Customer\Data Conversion.Inputs[Data Conversion Input].Columns[dob]"
-                      cachedDataType="date"
-                      cachedName="dob"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[dob]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT_Load_STG_Customer\Data Conversion.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\DFT_Load_STG_Customer\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of dob]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="10"
-                      lineageId="Package\DFT_Load_STG_Customer\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of dob]"
-                      name="Copy of dob"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[dob]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT_Load_STG_Customer\Data Conversion.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\DFT_Load_STG_Customer\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT_Load_STG_Customer\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT_Load_STG_Customer\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\DFT_Load_STG_Customer\Derived Column"
+              refId="Package\PKG_LOAD_STG_BRANCH\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -267,7 +214,7 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT_Load_STG_Customer\Derived Column.Inputs[Derived Column Input]"
+                  refId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <externalMetadataColumns />
@@ -275,20 +222,20 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Output]"
+                  refId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\DFT_Load_STG_Customer\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Output].Columns[PackageName]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Output].Columns[PackageName]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="100"
-                      lineageId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Output].Columns[PackageName]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Output].Columns[PackageName]"
                       name="PackageName"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -306,13 +253,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="200"
-                      lineageId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
+                      length="100"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
                       name="FileName"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -320,21 +267,21 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_STR,200,1252)@[User::FileName]</property>
+                          name="Expression">(DT_STR,100,1252)@[User::Filename]</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_STR,200,1252)@[User::FileName]</property>
+                          name="FriendlyExpression">(DT_STR,100,1252)@[User::Filename]</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Output].Columns[ErrorDate]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Output].Columns[ErrorDate]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Output].Columns[ErrorDate]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Output].Columns[ErrorDate]"
                       name="ErrorDate"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -355,23 +302,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Error Output]"
+                  refId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\DFT_Load_STG_Customer\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -380,7 +327,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT_Load_STG_Customer\Flat File Source"
+              refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
@@ -400,24 +347,24 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT_Load_STG_Customer\Flat File Source.Connections[FlatFileConnection]"
+                  refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Connections[FlatFileConnection]"
                   connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
                   connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output]"
+                  refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[customer_id]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].Columns[branch_id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="RedirectRow"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[customer_id]"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[customer_id]"
-                      name="customer_id"
+                      externalMetadataColumnId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[branch_id]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].Columns[branch_id]"
+                      name="branch_id"
                       truncationRowDisposition="RedirectRow">
                       <properties>
                         <property
@@ -431,15 +378,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[customer_name]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].Columns[branch_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="RedirectRow"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[customer_name]"
+                      externalMetadataColumnId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[branch_name]"
                       length="100"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[customer_name]"
-                      name="customer_name"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].Columns[branch_name]"
+                      name="branch_name"
                       truncationRowDisposition="RedirectRow">
                       <properties>
                         <property
@@ -453,56 +400,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[gender]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].Columns[city]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="RedirectRow"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gender]"
-                      length="1"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[gender]"
-                      name="gender"
-                      truncationRowDisposition="RedirectRow">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[dob]"
-                      dataType="date"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[dob]"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[dob]"
-                      name="dob"
-                      truncationRowDisposition="RedirectRow">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[city]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[city]"
+                      externalMetadataColumnId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[city]"
                       length="50"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[city]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].Columns[city]"
                       name="city"
                       truncationRowDisposition="RedirectRow">
                       <properties>
@@ -517,14 +422,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[state]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].Columns[state]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="RedirectRow"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[state]"
+                      externalMetadataColumnId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[state]"
                       length="50"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[state]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].Columns[state]"
                       name="state"
                       truncationRowDisposition="RedirectRow">
                       <properties>
@@ -539,14 +444,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[country]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].Columns[country]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="RedirectRow"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country]"
+                      externalMetadataColumnId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country]"
                       length="50"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[country]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].Columns[country]"
                       name="country"
                       truncationRowDisposition="RedirectRow">
                       <properties>
@@ -564,39 +469,29 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[customer_id]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[branch_id]"
                       dataType="i4"
-                      name="customer_id" />
+                      name="branch_id" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[customer_name]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[branch_name]"
                       codePage="1252"
                       dataType="str"
                       length="100"
-                      name="customer_name" />
+                      name="branch_name" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gender]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      name="gender" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[dob]"
-                      dataType="date"
-                      name="dob" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[city]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[city]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="city" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[state]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[state]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="state" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -604,27 +499,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Error Output]"
+                  refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -633,7 +528,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT_Load_STG_Customer\OLE DB Destination"
+              refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -648,7 +543,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[stg_customer]</property>
+                  name="OpenRowset">[dbo].[stg_branch]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -690,7 +585,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[VEERU90\DEV_6364451994.BANK_STG]"
                   connectionManagerRefId="Package.ConnectionManagers[VEERU90\DEV_6364451994.BANK_STG]"
                   description="The OLE DB runtime connection used to access the database."
@@ -698,109 +593,83 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[customer_id]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[branch_id]"
                       cachedDataType="i4"
-                      cachedName="customer_id"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[customer_id]" />
+                      cachedName="branch_id"
+                      externalMetadataColumnId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[branch_id]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].Columns[branch_id]" />
                     <inputColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[customer_name]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[branch_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
-                      cachedName="customer_name"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_name]"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[customer_name]" />
+                      cachedName="branch_name"
+                      externalMetadataColumnId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[branch_name]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].Columns[branch_name]" />
                     <inputColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[gender]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="1"
-                      cachedName="gender"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[gender]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[city]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[city]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="city"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[city]"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[city]" />
+                      externalMetadataColumnId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].Columns[city]" />
                     <inputColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[state]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[state]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="state"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[state]"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[state]" />
+                      externalMetadataColumnId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[state]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].Columns[state]" />
                     <inputColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[country]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[country]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="country"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[country]"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output].Columns[country]" />
-                    <inputColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of dob]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
-                      cachedName="Copy of dob"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dob]"
-                      lineageId="Package\DFT_Load_STG_Customer\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of dob]" />
+                      externalMetadataColumnId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output].Columns[country]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[branch_id]"
                       dataType="i4"
-                      name="customer_id" />
+                      name="branch_id" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_name]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[branch_name]"
                       codePage="1252"
                       dataType="str"
                       length="100"
-                      name="customer_name" />
+                      name="branch_name" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      name="gender" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[dob]"
-                      dataType="wstr"
-                      length="10"
-                      name="dob" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[city]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="city" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[state]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[state]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="state" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[country]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="country" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[load_date]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[load_date]"
                       dataType="dbTimeStamp"
                       name="load_date" />
                   </externalMetadataColumns>
@@ -808,22 +677,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT_Load_STG_Customer\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT_Load_STG_Customer\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -832,7 +701,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1"
+              refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -889,7 +758,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Connections[OleDbConnection]"
+                  refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[VEERU90\DEV_6364451994.BANK_STG]"
                   connectionManagerRefId="Package.ConnectionManagers[VEERU90\DEV_6364451994.BANK_STG]"
                   description="The OLE DB runtime connection used to access the database."
@@ -897,71 +766,79 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
+                      externalMetadataColumnId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
                     <inputColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[PackageName]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[PackageName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
                       cachedName="PackageName"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PackageName]"
-                      lineageId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Output].Columns[PackageName]" />
+                      externalMetadataColumnId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PackageName]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Output].Columns[PackageName]" />
                     <inputColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[FileName]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[FileName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="200"
+                      cachedLength="100"
                       cachedName="FileName"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
-                      lineageId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Output].Columns[FileName]" />
+                      externalMetadataColumnId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Output].Columns[FileName]" />
                     <inputColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorDate]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorDate]"
                       cachedDataType="dbDate"
                       cachedName="ErrorDate"
-                      externalMetadataColumnId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDate]"
-                      lineageId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Output].Columns[ErrorDate]" />
+                      externalMetadataColumnId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDate]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Output].Columns[ErrorDate]" />
+                    <inputColumn
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Error_Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Error_Description"
+                      externalMetadataColumnId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDesc]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Script Component.Outputs[Output 0].Columns[Error_Description]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorID]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorID]"
                       dataType="i4"
                       name="ErrorID" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PackageName]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PackageName]"
                       codePage="1252"
                       dataType="str"
                       length="100"
                       name="PackageName" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
                       codePage="1252"
                       dataType="str"
                       length="200"
                       name="FileName" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
                       dataType="i4"
                       name="ErrorCode" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDesc]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDesc]"
                       codePage="1252"
                       dataType="str"
                       length="500"
                       name="ErrorDesc" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDate]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorDate]"
                       dataType="dbTimeStamp"
                       name="ErrorDate" />
                   </externalMetadataColumns>
@@ -969,22 +846,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -993,7 +870,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT_Load_STG_Customer\Script Component"
+              refId="Package\PKG_LOAD_STG_BRANCH\Script Component"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;13"
               description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
@@ -1009,17 +886,77 @@
                   <arrayElements
                     arrayElementCount="30">
                     <arrayElement
-                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></arrayElement>
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
                     <arrayElement
@@ -1371,10 +1308,10 @@ public class Input0Buffer: ScriptBuffer
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_94829b347447403d9528f1fb070a654d.Properties.Settings.get_Default():SC_94829b347447403d9528f1fb070a654d.Properties.Sett" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_ca274837334746889f36a6d9941c794f.Properties.Settings.get_Default():SC_ca274837334746889f36a6d9941c794f.Properties.Sett" +
     "ings")]
 
-namespace SC_94829b347447403d9528f1fb070a654d.Properties {
+namespace SC_ca274837334746889f36a6d9941c794f.Properties {
     
     
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
@@ -1391,104 +1328,66 @@ namespace SC_94829b347447403d9528f1fb070a654d.Properties {
 }
 ]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
-                    <arrayElement
-                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
-*  Microsoft SQL Server Integration Services component wrapper
-*  This module defines the base class for your component
-*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
-
-using System;
-using System.Data;
-using Microsoft.SqlServer.Dts.Pipeline;
-using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
-using Microsoft.SqlServer.Dts.Runtime.Wrapper;
-
-public class UserComponent: ScriptComponent
-{
-    public Connections Connections;
-    public Variables Variables;
-    public UserComponent()
-    {
-        Connections = new Connections(this);
-        Variables = new Variables(this);
-    }
-
-    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
-    {
-
-        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
-        {
-            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
-        }
-
-    }
-
-    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
-    {
-        while (Buffer.NextRow())
-        {
-            Input0_ProcessInputRow(Buffer);
-        }
-    }
-
-    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
-    {
-    }
-
-}
-
-public class Connections
-{
-    ScriptComponent ParentComponent;
-
-    public Connections(ScriptComponent Component)
-    {
-        ParentComponent = Component;
-    }
-
-}
-
-public class Variables
-{
-    ScriptComponent ParentComponent;
-
-    public Variables(ScriptComponent Component)
-    {
-        ParentComponent = Component;
-    }
-
-}
-]]></arrayElement>
-                    <arrayElement
                       dataType="System.String"><![CDATA[Project]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
   <msb:PropertyGroup>
+    <msb:CodeName>SC_ca274837334746889f36a6d9941c794f</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
-    <msb:CodeName>SC_94829b347447403d9528f1fb070a654d</msb:CodeName>
-    <msb:DisplayName>SC_94829b347447403d9528f1fb070a654d</msb:DisplayName>
-    <msb:ProjectId>{FA420546-6306-4E2E-B802-2A58A29E0143}</msb:ProjectId>
+    <msb:DisplayName>SC_ca274837334746889f36a6d9941c794f</msb:DisplayName>
+    <msb:ProjectId>{91592ECA-9E07-40E1-8D25-4E572D10BFB6}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
-    <msb:Project Include="SC_94829b347447403d9528f1fb070a654d.csproj" />
-    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:Project Include="SC_ca274837334746889f36a6d9941c794f.csproj" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
     <msb:File Include="Properties\Settings.settings" />
     <msb:File Include="Properties\AssemblyInfo.cs" />
     <msb:File Include="Properties\Resources.resx" />
-    <msb:File Include="main.cs" />
-    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
     <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:File Include="ComponentWrapper.cs" />
   </msb:ItemGroup>
 </c:Project>]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[SC_94829b347447403d9528f1fb070a654d.csproj]]></arrayElement>
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_ca274837334746889f36a6d9941c794f")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_ca274837334746889f36a6d9941c794f")]
+[assembly: AssemblyCopyright("Copyright @  2025")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_ca274837334746889f36a6d9941c794f.csproj]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                     <arrayElement
@@ -1500,14 +1399,15 @@ public class Variables
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{ae4e9b8f-09a4-4d62-8fa8-87d240159b7d}</ProjectGuid>
+    <ProjectGuid>{c4090479-1861-4158-86fd-a4020857df80}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SC_94829b347447403d9528f1fb070a654d</RootNamespace>
-    <AssemblyName>SC_94829b347447403d9528f1fb070a654d</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>SC_ca274837334746889f36a6d9941c794f</RootNamespace>
+    <AssemblyName>SC_09705ECD501A48708862B65E11D775E4</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -1570,7 +1470,7 @@ public class Variables
     <VisualStudio>
       <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
         <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
-        <Host Name="ScriptComponent" GeneratedNamespace="SC_94829b347447403d9528f1fb070a654d" IconIndex="0"></Host>
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_ca274837334746889f36a6d9941c794f" IconIndex="0"></Host>
         <ProjectClient>
           <HostIdentifier>SSIS_SC160</HostIdentifier>
         </ProjectClient>
@@ -1579,39 +1479,17 @@ public class Variables
   </ProjectExtensions>
 </Project>]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[UTF8]]></arrayElement>
                     <arrayElement
-                      dataType="System.String"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("SC_94829b347447403d9528f1fb070a654d")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SC_94829b347447403d9528f1fb070a654d")]
-[assembly: AssemblyCopyright("Copyright @  2025")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.0.0")]
-]]></arrayElement>
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
                     <arrayElement
@@ -1626,14 +1504,14 @@ using System.Runtime.CompilerServices;
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_94829b347447403d9528f1fb070a654d.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_ca274837334746889f36a6d9941c794f.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
     "rceManager")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_94829b347447403d9528f1fb070a654d.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_ca274837334746889f36a6d9941c794f.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
     "fo")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_94829b347447403d9528f1fb070a654d.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_ca274837334746889f36a6d9941c794f.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
     "):Void")]
 
-namespace SC_94829b347447403d9528f1fb070a654d.Properties {
+namespace SC_ca274837334746889f36a6d9941c794f.Properties {
     
     
     /// <summary>
@@ -1661,7 +1539,7 @@ namespace SC_94829b347447403d9528f1fb070a654d.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if ((resourceMan == null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_94829b347447403d9528f1fb070a654d.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_ca274837334746889f36a6d9941c794f.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -1695,18 +1573,18 @@ namespace SC_94829b347447403d9528f1fb070a654d.Properties {
                   <arrayElements
                     arrayElementCount="2">
                     <arrayElement
-                      dataType="System.String"><![CDATA[SC_94829b347447403d9528f1fb070a654d.dll]]></arrayElement>
+                      dataType="System.String"><![CDATA[SC_09705ECD501A48708862B65E11D775E4.dll]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAOCkU2kAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAA8jIA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAM7TU2kAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAA7jIA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAKAyAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAJwyAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAA+BIAAAAgAAAAFAAAAAIA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAA9BIAAAAgAAAAFAAAAAIA
 AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAWAAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAGAAAAACAAAAHAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADU
-MgAAAAAAAEgAAAACAAUA0CEAABgQAAABAAAAAAAAAOgxAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAHAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADQ
+MgAAAAAAAEgAAAACAAUA0CEAABQQAAABAAAAAAAAAOQxAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACipiAwIoEgAACgNvBgAABm8TAAAK
 bwoAAAYqHgIoDgAABioqAgMEBSgUAAAKKlICexUAAAoCexYAAAoWlG8XAAAKKiICFigYAAAKKlIC
 exUAAAoCexYAAAoXlG8XAAAKKiICFygYAAAKKiYCGAMoGQAACipaAywIAhgoGgAACipyAQAAcHMb
@@ -1715,13 +1593,13 @@ AHAabx8AAAosFQIFAgMoIAAACg4EcwUAAAZvEAAABipKKwcCA28RAAAGA28MAAAGLfEqBio6Aigh
 AAAKAgN9AwAABCo6AighAAAKAgN9BAAABCoeAighAAAKKq5+BQAABC0ecq4AAHDQBwAAAigiAAAK
 byMAAApzJAAACoAFAAAEfgUAAAQqGn4GAAAEKh4CgAYAAAQqGn4HAAAEKh4CKCUAAAoqLnMZAAAG
 gAcAAAQqAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAMAFAAAjfgAALAYAAAgH
-AAAjU3RyaW5ncwAAAAA0DQAAIAEAACNVUwBUDgAAEAAAACNHVUlEAAAAZA4AALQBAAAjQmxvYgAA
+AAAjU3RyaW5ncwAAAAA0DQAAIAEAACNVUwBUDgAAEAAAACNHVUlEAAAAZA4AALABAAAjQmxvYgAA
 AAAAAAACAAABVxWgAQkBAAAA+gEzABYAAAEAAAAgAAAACAAAAAcAAAAaAAAADwAAACUAAAAQAAAA
 AwAAAAkAAAAKAAAAAQAAAAUAAAABAAAAAAAwAwEAAAAAAAYAKgI9BQYAvgI9BQYAdgEqBQ8AsQUA
 AAYAowEJBAYADQIJBAYA7gEJBAYApQIJBAYASgIJBAYAYwIJBAYAugEJBAYA1QH5AgoAfgLDAAoA
 0wTDAA4AxATDAAoAewTDAAoAdwbDAAYAOgaxAwYAWQEqBQYA5ARdBQYAbwT0AxIAKQEaAxIAigEa
 AxIAEQHfAwYAPgE9BRYAAQD0BAYAGwSxAwYAEwOxAwYAXgSxAwYA5ACxAwYAlQCxAwYA/AYJBAAA
-AAAjAAAAAAABAAEAAQAQAMQDAAAQAAEAAQABABAAtwQAADkAAQAFAAEAEABZBgAARQABAA4AAQAQ
+AABHAAAAAAABAAEAAQAQAMQDAAAQAAEAAQABABAAtwQAADkAAQAFAAEAEABZBgAARQABAA4AAQAQ
 AC4GAABJAAMAEgABABAA7wUAAEkABAATAAAAEABkBcAFSQAFABQAAAEQAB4GwAVhAAcAGAAGAC4G
 fwAGAO8FgwABAGcGhwABAGcGhwARALgDiwARAAEBjwARAHcAkwBQIAAAAADGANwCBgABAFggAAAA
 AMYA5wIGAAEAYCAAAAAAxgDZBpcAAQB5IAAAAACGGB0FBgACAIEgAAAAAIYYHQUlAAIAjCAAAAAA
@@ -1730,20 +1608,20 @@ CDUEEAAFANIgAAAAAIYIhAOhAAYA6SAAAAAAhgDwBkcABwDxIAAAAACGAEEGRwAHAPkgAAAAAIYY
 HQUGAAcAGSEAAAAAxgDMBqYABwA+IQAAAADGAcUGlwALAFEhAAAAAMYB2QaXAAwAUyEAAAAAhhgd
 BbAADQBiIQAAAACGGB0FsAAOAHEhAAAAAIMYHQUGAA8AeSEAAAAAkwjgBLYADwClIQAAAACTCOkA
 uwAPAKwhAAAAAJMI9QDAAA8AtCEAAAAAlghNBsYAEAC7IQAAAACGGB0FBgAQAMMhAAAAAJEYIwXL
-ABAAAAABAPQGAAABANkEAAACAPkFAAADAIkEAAABAPMCAAABAPMCAAABACwAAAACALkAAAADANkE
+ABAAAAABAPQGAAABANkEAAACAPkFAAADAIkEAAABAPMCAAABAPMCAAABAFAAAAACALkAAAADANkE
 AAAEAIkEAAABANkEAAABAPQGAAABAH0GAAABAH0GAAABAPMCCQAdBQEAEQAdBQYAGQAdBQoAKQAd
 BRAAMQAdBRAAOQAdBRAAQQAdBRAASQAdBRAAUQAdBRAAWQAdBRAAYQAdBRAAaQAdBQYAmQAdBQYA
-uQAdBRUAyQAdBQYAiQDcAgYAiQDnAgYAiQA0ABsA0QBKBCAAcQAdBSUAcQDZBC8AcQD5BTMAeQAa
+uQAdBRUAyQAdBQYAiQDcAgYAiQDnAgYAiQBYABsA0QBKBCAAcQAdBSUAcQDZBC8AcQD5BTMAeQAa
 ADcAcQCZAzwAcQCoA0EAcQCgAwEA2QAdBRAAcQDwBkcAcQBBBkcAiQAdBQYA4QAnBksAiQANBlIA
 kQAdBQYA8QCnAFgA8QD4Bl8AoQAdBWUAwQAdBQYALgALAOoALgATAPMALgAbABIBLgAjABsBLgAr
-AEQBLgAzAEQBLgA7AEQBLgBDABsBLgBLAEoBLgBTAEQBLgBbAGEBQwBjAK8B4QB7AK8B4wBrAK8B
+AEQBLgAzAEQBLgA7AEQBLgBDABsBLgBLAEoBLgBTAEQBLgBbAGEBQwBjAKsB4QB7AKsB4wBrAKsB
 6QBzABIBCQFzABIBAwABAAcABwAIAAkAAACLAM8AAABcA9MAAADTA88AAABxA9MAAABNBNcAAACI
 A9MAAADkBNsAAAAJAeAAAABRBuUAAgAGAAMAAgAHAAUAAgAIAAcAAgAJAAkAAQAKAAsAAQALAA0A
-AgAVAA8AAgAWABEAAQAXABEAAgAYABMABIAAAAEAAAAAAAAAAAAAAAAAUwAAAAQAAAAAAAAAAAAA
-AG0ASgAAAAAAEAAAAAAAAAAAAAAAdgCHBgAAAAAQAAAAAAAAAAAAAAB2AKQGAAAAAAQAAAAAAAAA
+AgAVAA8AAgAWABEAAQAXABEAAgAYABMABIAAAAEAAAAAAAAAAAAAAAAAIwAAAAQAAAAAAAAAAAAA
+AG0AbgAAAAAAEAAAAAAAAAAAAAAAdgCHBgAAAAAQAAAAAAAAAAAAAAB2AKQGAAAAAAQAAAAAAAAA
 AAAAAG0AsQMAAAAAEAAAAAAAAAAAAAAAdgCTBAAAAAAAAAAAAQAAAG4FAAAAAAAAAElEVFNDb21w
-b25lbnRNZXRhRGF0YTEwMABHZXRJbnQzMgA8TW9kdWxlPgBJbnB1dElEAGdldF9Db21wb25lbnRN
-ZXRhRGF0YQBtc2NvcmxpYgBTQ185NDgyOWIzNDc0NDc0MDNkOTUyOGYxZmIwNzBhNjU0ZABkZWZh
+b25lbnRNZXRhRGF0YTEwMABHZXRJbnQzMgBTQ18wOTcwNUVDRDUwMUE0ODcwODg2MkI2NUUxMUQ3
+NzVFNAA8TW9kdWxlPgBJbnB1dElEAGdldF9Db21wb25lbnRNZXRhRGF0YQBtc2NvcmxpYgBkZWZh
 dWx0SW5zdGFuY2UAZ2V0X0Vycm9yQ29kZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhh
 bmRsZQBJbnB1dE5hbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxpbmUAVHlwZQBnZXRf
 Q3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAQXBwbGljYXRpb25TZXR0aW5nc0Jh
@@ -1756,7 +1634,7 @@ cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0
 ZQBTU0lTU2NyaXB0Q29tcG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlB
 dHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhlY3V0ZQBQb3N0RXhl
 Y3V0ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFN0cmluZwBTeXN0ZW0uQ29tcG9u
-ZW50TW9kZWwAU0NfOTQ4MjliMzQ3NDQ3NDAzZDk1MjhmMWZiMDcwYTY1NGQuZGxsAGdldF9FcnJv
+ZW50TW9kZWwAU0NfMDk3MDVFQ0Q1MDFBNDg3MDg4NjJCNjVFMTFENzc1RTQuZGxsAGdldF9FcnJv
 ckNvZGVfSXNOdWxsAGdldF9FcnJvckNvbHVtbl9Jc051bGwAc2V0X0Vycm9yRGVzY3JpcHRpb25f
 SXNOdWxsAFNldE51bGwAc2V0X0l0ZW0AU3lzdGVtAHJlc291cmNlTWFuAFNjcmlwdE1haW4AZ2V0
 X0Vycm9yQ29sdW1uAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5
@@ -1766,9 +1644,9 @@ dHB1dE5hbWVNYXAAT3V0cHV0TWFwAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRFRTUGlwZWxpbmVXcmFw
 AElucHV0MEJ1ZmZlcgBQaXBlbGluZUJ1ZmZlcgBTY3JpcHRCdWZmZXIAZ2V0X1Jlc291cmNlTWFu
 YWdlcgBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZS5XcmFwcGVyAC5jdG9yAC5jY3Rv
 cgBTeXN0ZW0uRGlhZ25vc3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0
-ZW0uUmVzb3VyY2VzAFNDXzk0ODI5YjM0NzQ0NzQwM2Q5NTI4ZjFmYjA3MGE2NTRkLlByb3BlcnRp
-ZXMuUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTQ185NDgyOWIzNDc0NDc0MDNk
-OTUyOGYxZmIwNzBhNjU0ZC5Qcm9wZXJ0aWVzAFZhcmlhYmxlcwBCdWZmZXJDb2x1bW5JbmRleGVz
+ZW0uUmVzb3VyY2VzAFNDX2NhMjc0ODM3MzM0NzQ2ODg5ZjM2YTZkOTk0MWM3OTRmLlByb3BlcnRp
+ZXMuUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTQ19jYTI3NDgzNzMzNDc0Njg4
+OWYzNmE2ZDk5NDFjNzk0Zi5Qcm9wZXJ0aWVzAFZhcmlhYmxlcwBCdWZmZXJDb2x1bW5JbmRleGVz
 AEdldENvbHVtbkluZGV4ZXMAU2V0dGluZ3MARXF1YWxzAENvbm5lY3Rpb25zAE9iamVjdABFbmRP
 ZlJvd3NldABnZXRfRGVmYXVsdABVc2VyQ29tcG9uZW50AFBhcmVudENvbXBvbmVudABTY3JpcHRD
 b21wb25lbnQATWljcm9zb2Z0LlNxbFNlcnZlci5UeFNjcmlwdABNaWNyb3NvZnQuU3FsU2VydmVy
@@ -1776,22 +1654,22 @@ LlBpcGVsaW5lSG9zdABJbnB1dDBfUHJvY2Vzc0lucHV0AElucHV0MF9Qcm9jZXNzSW5wdXRSb3cA
 TmV4dFJvdwBnZXRfQXNzZW1ibHkAAAAAAICbSQBzAE4AdQBsAGwAIABwAHIAbwBwAGUAcgB0AHkA
 IABjAGEAbgBuAG8AdAAgAGIAZQAgAHMAZQB0ACAAdABvACAARgBhAGwAcwBlAC4AIABBAHMAcwBp
 AGcAbgAgAGEAIAB2AGEAbAB1AGUAIAB0AG8AIAB0AGgAZQAgAGMAbwBsAHUAbQBuACAAaQBuAHMA
-dABlAGEAZAAuAAAPSQBuAHAAdQB0ACAAMAAAcVMAQwBfADkANAA4ADIAOQBiADMANAA3ADQANAA3
-ADQAMAAzAGQAOQA1ADIAOABmADEAZgBiADAANwAwAGEANgA1ADQAZAAuAFAAcgBvAHAAZQByAHQA
-aQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAMN74exZ21kaiqewPYNkrUgAEIAEBCAMgAAEFIAEB
+dABlAGEAZAAuAAAPSQBuAHAAdQB0ACAAMAAAcVMAQwBfAGMAYQAyADcANAA4ADMANwAzADMANAA3
+ADQANgA4ADgAOQBmADMANgBhADYAZAA5ADkANAAxAGMANwA5ADQAZgAuAFAAcgBvAHAAZQByAHQA
+aQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAXpcpH/GZOkiXvoNCUYRxoAAEIAEBCAMgAAEFIAEB
 EREEIAEBDgUgAQERWQQgABJpBCABDggJIAMBEj0dCBJBAwYSPQMGHQgEIAEICAQgAQIIBSACAQgc
 AyAAAgYgAgIOEXUFIAEdCAgGAAESeRF9BSAAEoCBByACAQ4SgIEIt3pcVhk04IkIiYRdzYCAzJED
 BhIUAwYSGAMGEkUDBhJRAwYSVQMGEiAFIAEBEgwDIAAIBCABAQIJIAQBCA4SPRJBBSABARJFBAAA
 ElEEAAASVQUAAQESVQQAABIgAwAAAQMoAAgDKAACAygADgQIABJRBAgAElUECAASIAgBAAgAAAAA
-AB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU0NfOTQ4MjliMzQ3
-NDQ3NDAzZDk1MjhmMWZiMDcwYTY1NGQAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAyNQAATQEA
-HC5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43LjIBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lFC5O
-RVQgRnJhbWV3b3JrIDQuNy4yBAEAAAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMu
-UmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJh
-bCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRp
-bWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAAyDIAAAAAAAAAAAAA4jIAAAAgAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAANQyAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwA
-AAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU0NfY2EyNzQ4Mzcz
+MzQ3NDY4ODlmMzZhNmQ5OTQxYzc5NGYAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAyNQAASQEA
+Gi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVU
+IEZyYW1ld29yayA0LjcEAQAAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNv
+dXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQ
+dWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJl
+c291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAADEMgAAAAAAAAAAAADeMgAAACAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAA0DIAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA
+/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1803,17 +1681,17 @@ AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
 AAAAAAAAALAETAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAKAMAAAEAMAAwADAA
 MAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBu
 AHkATgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAA
-AABTAEMAXwA5ADQAOAAyADkAYgAzADQANwA0ADQANwA0ADAAMwBkADkANQAyADgAZgAxAGYAYgAw
-ADcAMABhADYANQA0AGQAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
-MAAuADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfADkANAA4ADIAOQBi
-ADMANAA3ADQANAA3ADQAMAAzAGQAOQA1ADIAOABmADEAZgBiADAANwAwAGEANgA1ADQAZAAuAGQA
+AABTAEMAXwBjAGEAMgA3ADQAOAAzADcAMwAzADQANwA0ADYAOAA4ADkAZgAzADYAYQA2AGQAOQA5
+ADQAMQBjADcAOQA0AGYAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
+MAAuADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfADAAOQA3ADAANQBF
+AEMARAA1ADAAMQBBADQAOAA3ADAAOAA4ADYAMgBCADYANQBFADEAMQBEADcANwA1AEUANAAuAGQA
 bABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBo
 AHQAIABAACAAIAAyADAAMgA1AAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMA
-AAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8AOQA0
-ADgAMgA5AGIAMwA0ADcANAA0ADcANAAwADMAZAA5ADUAMgA4AGYAMQBmAGIAMAA3ADAAYQA2ADUA
-NABkAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfADkANAA4
-ADIAOQBiADMANAA3ADQANAA3ADQAMAAzAGQAOQA1ADIAOABmADEAZgBiADAANwAwAGEANgA1ADQA
-ZAAAADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4
+AAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8AMAA5
+ADcAMAA1AEUAQwBEADUAMAAxAEEANAA4ADcAMAA4ADgANgAyAEIANgA1AEUAMQAxAEQANwA3ADUA
+RQA0AC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfAGMAYQAy
+ADcANAA4ADMANwAzADMANAA3ADQANgA4ADgAOQBmADMANgBhADYAZAA5ADkANAAxAGMANwA5ADQA
+ZgAAADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4
 AAgAAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1822,7 +1700,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAA9DIAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAA8DIAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1838,7 +1716,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   dataType="System.String"
                   description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
                   name="VSTAProjectName"
-                  typeConverter="NOTBROWSABLE">SC_94829b347447403d9528f1fb070a654d</property>
+                  typeConverter="NOTBROWSABLE">SC_09705ecd501a48708862b65e11d775e4</property>
                 <property
                   dataType="System.String"
                   description="Specifies the programming language used by the script."
@@ -1874,36 +1752,36 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </properties>
               <inputs>
                 <input
-                  refId="Package\DFT_Load_STG_Customer\Script Component.Inputs[Input 0]"
+                  refId="Package\PKG_LOAD_STG_BRANCH\Script Component.Inputs[Input 0]"
                   hasSideEffects="true"
                   name="Input 0">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT_Load_STG_Customer\Script Component.Inputs[Input 0].Columns[ErrorCode]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Script Component.Inputs[Input 0].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
                     <inputColumn
-                      refId="Package\DFT_Load_STG_Customer\Script Component.Inputs[Input 0].Columns[ErrorColumn]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Script Component.Inputs[Input 0].Columns[ErrorColumn]"
                       cachedDataType="i4"
                       cachedName="ErrorColumn"
-                      lineageId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]" />
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT_Load_STG_Customer\Script Component.Outputs[Output 0]"
+                  refId="Package\PKG_LOAD_STG_BRANCH\Script Component.Outputs[Output 0]"
                   name="Output 0"
-                  synchronousInputId="Package\DFT_Load_STG_Customer\Script Component.Inputs[Input 0]">
+                  synchronousInputId="Package\PKG_LOAD_STG_BRANCH\Script Component.Inputs[Input 0]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_Load_STG_Customer\Script Component.Outputs[Output 0].Columns[Error_Description]"
+                      refId="Package\PKG_LOAD_STG_BRANCH\Script Component.Outputs[Output 0].Columns[Error_Description]"
                       codePage="1252"
                       dataType="str"
                       length="100"
-                      lineageId="Package\DFT_Load_STG_Customer\Script Component.Outputs[Output 0].Columns[Error_Description]"
+                      lineageId="Package\PKG_LOAD_STG_BRANCH\Script Component.Outputs[Output 0].Columns[Error_Description]"
                       name="Error_Description" />
                   </outputColumns>
                   <externalMetadataColumns />
@@ -1913,72 +1791,27 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </components>
           <paths>
             <path
-              refId="Package\DFT_Load_STG_Customer.Paths[Data Conversion Output]"
-              endId="Package\DFT_Load_STG_Customer\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\DFT_Load_STG_Customer\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\DFT_Load_STG_Customer.Paths[Derived Column Output]"
-              endId="Package\DFT_Load_STG_Customer\Script Component.Inputs[Input 0]"
+              refId="Package\PKG_LOAD_STG_BRANCH.Paths[Derived Column Output]"
+              endId="Package\PKG_LOAD_STG_BRANCH\Script Component.Inputs[Input 0]"
               name="Derived Column Output"
-              startId="Package\DFT_Load_STG_Customer\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT_Load_STG_Customer.Paths[Flat File Source Error Output]"
-              endId="Package\DFT_Load_STG_Customer\Derived Column.Inputs[Derived Column Input]"
+              refId="Package\PKG_LOAD_STG_BRANCH.Paths[Flat File Source Error Output]"
+              endId="Package\PKG_LOAD_STG_BRANCH\Derived Column.Inputs[Derived Column Input]"
               name="Flat File Source Error Output"
-              startId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Error Output]" />
+              startId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Error Output]" />
             <path
-              refId="Package\DFT_Load_STG_Customer.Paths[Flat File Source Output]"
-              endId="Package\DFT_Load_STG_Customer\Data Conversion.Inputs[Data Conversion Input]"
+              refId="Package\PKG_LOAD_STG_BRANCH.Paths[Flat File Source Output]"
+              endId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
-              startId="Package\DFT_Load_STG_Customer\Flat File Source.Outputs[Flat File Source Output]" />
+              startId="Package\PKG_LOAD_STG_BRANCH\Flat File Source.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\DFT_Load_STG_Customer.Paths[Output 0]"
-              endId="Package\DFT_Load_STG_Customer\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              refId="Package\PKG_LOAD_STG_BRANCH.Paths[Output 0]"
+              endId="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
               name="Output 0"
-              startId="Package\DFT_Load_STG_Customer\Script Component.Outputs[Output 0]" />
+              startId="Package\PKG_LOAD_STG_BRANCH\Script Component.Outputs[Output 0]" />
           </paths>
         </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\FST_Move_To_Archive"
-      DTS:CreationName="Microsoft.FileSystemTask"
-      DTS:Description="File System Task"
-      DTS:DTSID="{8330231F-68E7-4E21-9ACB-1FD89A3E1320}"
-      DTS:ExecutableType="Microsoft.FileSystemTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="FST_Move_To_Archive"
-      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <FileSystemData
-          TaskOperationType="MoveFile"
-          TaskSourcePath="User::SrcFile"
-          TaskIsSourceVariable="True"
-          TaskDestinationPath="User::ArcFile"
-          TaskIsDestinationVariable="True" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\FST_Move_To_Error"
-      DTS:CreationName="Microsoft.FileSystemTask"
-      DTS:Description="File System Task"
-      DTS:DTSID="{CF4A42F8-8FC2-4D8D-9775-1A0528246A6F}"
-      DTS:ExecutableType="Microsoft.FileSystemTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="FST_Move_To_Error"
-      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <FileSystemData
-          TaskOperationType="MoveFile"
-          TaskSourcePath="User::SrcFile"
-          TaskIsSourceVariable="True"
-          TaskDestinationPath="User::ErrFile"
-          TaskIsDestinationVariable="True" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1986,16 +1819,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{29691DAB-95D2-44FD-96CA-DC34C2986A8C}"
-      DTS:From="Package\DFT_Load_STG_Customer"
+      DTS:DTSID="{E75FCB63-D2A1-4B11-A109-4014082D2600}"
+      DTS:From="Package\PKG_LOAD_STG_BRANCH"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\FST_Move_To_Archive" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{F56B8858-44CC-457D-977B-CFF2FF10F19D}"
-      DTS:From="Package\DFT_Load_STG_Customer"
+      DTS:DTSID="{71DB9253-C0F9-4E48-89D7-C6C19BE81747}"
+      DTS:From="Package\PKG_LOAD_STG_BRANCH"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\FST_Move_To_Error"
@@ -2005,15 +1838,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{91A2C45F-FE8C-491D-97E5-669D1BF83611}"
-      DTS:EventID="0"
+      DTS:DTSID="{63F125DE-82D8-4186-8684-D8BE2893606C}"
+      DTS:EventID="-1"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
       <DTS:Variables>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{478FAC73-106F-4095-99A6-F2E33D0CB4EB}"
+          DTS:DTSID="{62884F36-5C8F-465F-977C-4C65F3B17BB9}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -2026,7 +1859,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           DTS:refId="Package.EventHandlers[OnError]\ask FAILURE"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{3789A9D5-294F-4255-9295-6CE8094C0717}"
+          DTS:DTSID="{8cab75f6-68d6-41ac-bdee-b5cb8cffe70f}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ask FAILURE"
@@ -2034,7 +1867,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{C4E23A1F-9453-4455-B7F5-6494D8AC5AFD}"
+              SQLTask:Connection="{3FAF74E9-F228-4EF7-84A1-3D39177D93B0}"
               SQLTask:SqlStatementSource="UPDATE dbo.SSIS_Task_Log&#xA;SET&#xA;    EndTime   = GETDATE(),&#xA;    Status    = 'FAILED',&#xA;    ErrorMsg  = ?&#xA;WHERE ExecutionID = ?&#xA;  AND PackageName = ?&#xA;  AND TaskName = ?&#xA;  AND Status = 'RUNNING';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -2068,7 +1901,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPostExecute]"
       DTS:CreationName="OnPostExecute"
-      DTS:DTSID="{DCCF0559-1C67-4506-9AEE-986C4B6D285D}"
+      DTS:DTSID="{145A9500-9834-490B-B1E0-9F98A8BC22D8}"
       DTS:EventID="0"
       DTS:EventName="OnPostExecute"
       DTS:LocaleID="-1">
@@ -2076,7 +1909,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{00149BE9-1349-4148-9C1D-A568EAE45F59}"
+          DTS:DTSID="{57BAEDA0-54BE-4591-91A0-989B4091B57E}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -2089,7 +1922,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           DTS:refId="Package.EventHandlers[OnPostExecute]\Task SUCCESS"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{9172BF0E-4BA6-4F5C-989C-F405EDB1CE38}"
+          DTS:DTSID="{fe19e213-af98-431e-af3e-7536eb538e63}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Task SUCCESS"
@@ -2097,7 +1930,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{C4E23A1F-9453-4455-B7F5-6494D8AC5AFD}"
+              SQLTask:Connection="{3FAF74E9-F228-4EF7-84A1-3D39177D93B0}"
               SQLTask:SqlStatementSource="UPDATE dbo.SSIS_Task_Log&#xA;SET&#xA;    EndTime = GETDATE(),&#xA;    Status  = 'SUCCESS'&#xA;WHERE ExecutionID = ?&#xA;  AND PackageName = ?&#xA;  AND TaskName = ?&#xA;  AND Status = 'RUNNING';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -2125,15 +1958,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPreExecute]"
       DTS:CreationName="OnPreExecute"
-      DTS:DTSID="{0C7E9C92-B7ED-4B93-8DA4-E5693620B30E}"
-      DTS:EventID="7602273"
+      DTS:DTSID="{DB7A2B90-7D6F-48A6-BE21-05F6EA2249E9}"
+      DTS:EventID="7077990"
       DTS:EventName="OnPreExecute"
       DTS:LocaleID="-1">
       <DTS:Variables>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{BF8F96E4-545E-4585-9F0A-5E16CC387C44}"
+          DTS:DTSID="{F863111A-2F06-4882-B04E-89DAF1684A12}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -2146,7 +1979,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           DTS:refId="Package.EventHandlers[OnPreExecute]\Log_Task_Start"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{B0D34F1F-9866-4202-99C9-A0AAC9B5443B}"
+          DTS:DTSID="{fb89668d-6bb2-4f10-8697-2e06a1e20e53}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log_Task_Start"
@@ -2154,7 +1987,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{C4E23A1F-9453-4455-B7F5-6494D8AC5AFD}"
+              SQLTask:Connection="{3FAF74E9-F228-4EF7-84A1-3D39177D93B0}"
               SQLTask:SqlStatementSource="INSERT INTO dbo.SSIS_Task_Log&#xA;(&#xA;    ExecutionID,&#xA;    PackageName,&#xA;    TaskName,&#xA;    StartTime,&#xA;    Status&#xA;)&#xA;VALUES&#xA;(&#xA;    ?, ?, ?, GETDATE(), 'RUNNING'&#xA;);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -2193,39 +2026,43 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="209.333333333334,42.6666666666667"
-          Id="Package\DFT_Load_STG_Customer"
-          TopLeft="211.249990556389,47.2105257974272" />
-        <NodeLayout
           Size="192,42.6666666666667"
           Id="Package\FST_Move_To_Archive"
-          TopLeft="58.7499973736705,142.999998429888" />
+          TopLeft="99.9999955296519,147.105261542708" />
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\FST_Move_To_Error"
+          TopLeft="398.749982174487,140.947366873478" />
+        <NodeLayout
+          Size="216,42.6666666666667"
+          Id="Package\PKG_LOAD_STG_BRANCH"
+          TopLeft="244.374989075587,36.9473680153778" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="282.3611016675,89.8771924640939">
+          TopLeft="317.70832240892,79.6140346820445">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-127.61110429383,53.1228059657944"
+              EndConnector="-121.708326879268,67.4912268606635"
               Start="0,0"
-              End="-127.61110429383,45.6228059657944">
+              End="-121.708326879268,59.9912268606635">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.4908949545565" />
+                    End="0,23.294246156886" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.4908949545565"
-                    Point2="0,21.4908949545565"
-                    Point3="-4,21.4908949545565" />
+                    Point1="0,23.294246156886"
+                    Point2="0,27.294246156886"
+                    Point3="-4,27.294246156886" />
                   <mssgle:LineSegment
-                    End="-123.61110429383,21.4908949545565" />
+                    End="-117.708326879268,27.294246156886" />
                   <mssgle:CubicBezierSegment
-                    Point1="-123.61110429383,21.4908949545565"
-                    Point2="-127.61110429383,21.4908949545565"
-                    Point3="-127.61110429383,25.4908949545565" />
+                    Point1="-117.708326879268,27.294246156886"
+                    Point2="-121.708326879268,27.294246156886"
+                    Point3="-121.708326879268,31.294246156886" />
                   <mssgle:LineSegment
-                    End="-127.61110429383,45.6228059657944" />
+                    End="-121.708326879268,59.9912268606635" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2234,43 +2071,39 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="180,42.6666666666667"
-          Id="Package\FST_Move_To_Error"
-          TopLeft="399.999982118607,134.789472204249" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="349.472212778612,89.8771924640939">
+          TopLeft="387.041655742254,79.6140346820445">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="140.527769339996,44.9122797401548"
+              EndConnector="101.708326432233,61.3333321914335"
               Start="0,0"
-              End="140.527769339996,37.4122797401548">
+              End="101.708326432233,53.8333321914335">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.1693167090386" />
+                    End="0,20.8039211068297" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.1693167090386"
-                    Point2="0,18.1693167090386"
-                    Point3="4,18.1693167090386" />
+                    Point1="0,20.8039211068297"
+                    Point2="0,24.8039211068297"
+                    Point3="4,24.8039211068297" />
                   <mssgle:LineSegment
-                    End="136.527769339996,18.1693167090386" />
+                    End="97.7083264322334,24.8039211068297" />
                   <mssgle:CubicBezierSegment
-                    Point1="136.527769339996,18.1693167090386"
-                    Point2="140.527769339996,18.1693167090386"
-                    Point3="140.527769339996,22.1693167090386" />
+                    Point1="97.7083264322334,24.8039211068297"
+                    Point2="101.708326432233,24.8039211068297"
+                    Point3="101.708326432233,28.8039211068297" />
                   <mssgle:LineSegment
-                    End="140.527769339996,37.4122797401548" />
+                    End="101.708326432233,53.8333321914335" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="55.0225370137478,23.1693167090386,30.4826953125,9.7490234375"
+              BoundingBox="35.6128155598667,29.8039211068297,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2278,212 +2111,180 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Text="success"
           ParentId="Package"
           FontInfo="{assembly:Null}"
-          Size="68,60"
-          Id="8bd2b356-642e-4355-bfb0-254e474ac105"
-          TopLeft="106.249995250255,71.8421044743458" />
+          Size="68,40"
+          Id="4a61860b-b653-4d03-b35a-9eac0e0f0757"
+          TopLeft="188.749991562218,70.4736834367392" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\DFT_Load_STG_Customer">
+    design-time-name="Package\PKG_LOAD_STG_BRANCH">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\DFT_Load_STG_Customer\Flat File Source"
-          TopLeft="270.62498790212,13.6842103760659" />
+          Size="165.333333333334,42.6666666666667"
+          Id="Package\PKG_LOAD_STG_BRANCH\Script Component"
+          TopLeft="420.624981196598,153.947366730741" />
         <NodeLayout
           Size="174.666666666667,42.6666666666667"
-          Id="Package\DFT_Load_STG_Customer\OLE DB Destination"
-          TopLeft="65.624997066334,174.47368229484" />
+          Id="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination"
+          TopLeft="95.6249957252296,137.526314279462" />
+        <NodeLayout
+          Size="184,42.6666666666667"
+          Id="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1"
+          TopLeft="282.499987371266,226.47368172389" />
         <NodeLayout
           Size="156,42.6666666666667"
-          Id="Package\DFT_Load_STG_Customer\Derived Column"
-          TopLeft="444.37498013489,60.8947361734931" />
+          Id="Package\PKG_LOAD_STG_BRANCH\Derived Column"
+          TopLeft="399.999982118607,75.9473675871656" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\PKG_LOAD_STG_BRANCH\Flat File Source"
+          TopLeft="227.499989829958,19.8421050452955" />
         <EdgeLayout
-          Id="Package\DFT_Load_STG_Customer.Paths[Flat File Source Error Output]"
-          TopLeft="425.291654568787,35.0175437093992">
+          Id="Package\PKG_LOAD_STG_BRANCH.Paths[Flat File Source Error Output]"
+          TopLeft="382.166656496624,41.1754383786288">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="97.0833255661033,25.8771924640939"
+              EndConnector="95.8333256219828,34.7719292085367"
               Start="0,0"
-              End="97.0833255661033,18.3771924640939">
+              End="95.8333256219828,27.2719292085367">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="93.0833255661033,0" />
+                    End="91.8333256219828,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="93.0833255661033,0"
-                    Point2="97.0833255661033,0"
-                    Point3="97.0833255661033,4" />
+                    Point1="91.8333256219828,0"
+                    Point2="95.8333256219828,0"
+                    Point3="95.8333256219828,4" />
                   <mssgle:LineSegment
-                    End="97.0833255661033,18.3771924640939" />
+                    End="95.8333256219828,27.2719292085367" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="33.4569388473533,-17.609375,127.2527734375,11.609375"
+              BoundingBox="32.2069389032328,-17.609375,127.2527734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="165.333333333334,42.6666666666667"
-          Id="Package\DFT_Load_STG_Customer\Script Component"
-          TopLeft="466.249979157001,140.947366873478" />
         <EdgeLayout
-          Id="Package\DFT_Load_STG_Customer.Paths[Derived Column Output]"
-          TopLeft="522.37498013489,103.56140284016">
+          Id="Package\PKG_LOAD_STG_BRANCH.Paths[Derived Column Output]"
+          TopLeft="477.999982118607,118.614034253832">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="26.5416656887779,37.3859640333186"
+              EndConnector="25.2916657446574,35.3333324769087"
               Start="0,0"
-              End="26.5416656887779,29.8859640333186">
+              End="25.2916657446574,27.8333324769087">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.6929820166593" />
+                    End="0,13.6666662384544" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.6929820166593"
-                    Point2="0,18.6929820166593"
-                    Point3="4,18.6929820166593" />
+                    Point1="0,13.6666662384544"
+                    Point2="0,17.6666662384544"
+                    Point3="4,17.6666662384544" />
                   <mssgle:LineSegment
-                    End="22.5416656887779,18.6929820166593" />
+                    End="21.2916657446574,17.6666662384544" />
                   <mssgle:CubicBezierSegment
-                    Point1="22.5416656887779,18.6929820166593"
-                    Point2="26.5416656887779,18.6929820166593"
-                    Point3="26.5416656887779,22.6929820166593" />
+                    Point1="21.2916657446574,17.6666662384544"
+                    Point2="25.2916657446574,17.6666662384544"
+                    Point3="25.2916657446574,21.6666662384544" />
                   <mssgle:LineSegment
-                    End="26.5416656887779,29.8859640333186" />
+                    End="25.2916657446574,27.8333324769087" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="184,42.6666666666667"
-          Id="Package\DFT_Load_STG_Customer\OLE DB Destination 1"
-          TopLeft="304.374986393378,229.894734317907" />
-        <EdgeLayout
-          Id="Package\DFT_Load_STG_Customer.Paths[Output 0]"
-          TopLeft="548.916645823668,183.614033540145">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-152.54165943029,46.2807007777615"
-              Start="0,0"
-              End="-152.54165943029,38.7807007777615">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.1403503888807" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.1403503888807"
-                    Point2="0,23.1403503888807"
-                    Point3="-4,23.1403503888807" />
-                  <mssgle:LineSegment
-                    End="-148.54165943029,23.1403503888807" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-148.54165943029,23.1403503888807"
-                    Point2="-152.54165943029,23.1403503888807"
-                    Point3="-152.54165943029,27.1403503888807" />
-                  <mssgle:LineSegment
-                    End="-152.54165943029,38.7807007777615" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="158.666666666667,42.6666666666667"
-          Id="Package\DFT_Load_STG_Customer\Data Conversion"
-          TopLeft="88.749996032566,81.4210517375919" />
-        <EdgeLayout
-          Id="Package\DFT_Load_STG_Customer.Paths[Flat File Source Output]"
-          TopLeft="347.958321235453,56.3508770427325">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-179.874991869554,25.0701746948593"
-              Start="0,0"
-              End="-179.874991869554,17.5701746948593">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.53508734742967" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.53508734742967"
-                    Point2="0,12.5350873474297"
-                    Point3="-4,12.5350873474297" />
-                  <mssgle:LineSegment
-                    End="-175.874991869554,12.5350873474297" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-175.874991869554,12.5350873474297"
-                    Point2="-179.874991869554,12.5350873474297"
-                    Point3="-179.874991869554,16.5350873474297" />
-                  <mssgle:LineSegment
-                    End="-179.874991869554,17.5701746948593" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT_Load_STG_Customer.Paths[Data Conversion Output]"
-          TopLeft="168.083329365899,124.087718404259">
+          Id="Package\PKG_LOAD_STG_BRANCH.Paths[Output 0]"
+          TopLeft="503.291647863265,196.614033397408">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-15.1249989662319,50.3859638905812"
+              EndConnector="-128.791660491998,29.8596483264824"
               Start="0,0"
-              End="-15.1249989662319,42.8859638905812">
+              End="-128.791660491998,22.3596483264824">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.1929819452906" />
+                    End="0,10.9298241632412" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.1929819452906"
-                    Point2="0,25.1929819452906"
-                    Point3="-4,25.1929819452906" />
+                    Point1="0,10.9298241632412"
+                    Point2="0,14.9298241632412"
+                    Point3="-4,14.9298241632412" />
                   <mssgle:LineSegment
-                    End="-11.1249989662319,25.1929819452906" />
+                    End="-124.791660491998,14.9298241632412" />
                   <mssgle:CubicBezierSegment
-                    Point1="-11.1249989662319,25.1929819452906"
-                    Point2="-15.1249989662319,25.1929819452906"
-                    Point3="-15.1249989662319,29.1929819452906" />
+                    Point1="-124.791660491998,14.9298241632412"
+                    Point2="-128.791660491998,14.9298241632412"
+                    Point3="-128.791660491998,18.9298241632412" />
                   <mssgle:LineSegment
-                    End="-15.1249989662319,42.8859638905812" />
+                    End="-128.791660491998,22.3596483264824" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PKG_LOAD_STG_BRANCH.Paths[Flat File Source Output]"
+          TopLeft="304.833323163291,62.5087717119622">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-121.874994104728,75.0175425674998"
+              Start="0,0"
+              End="-121.874994104728,67.5175425674998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5087712837499" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.5087712837499"
+                    Point2="0,37.5087712837499"
+                    Point3="-4,37.5087712837499" />
+                  <mssgle:LineSegment
+                    End="-117.874994104728,37.5087712837499" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-117.874994104728,37.5087712837499"
+                    Point2="-121.874994104728,37.5087712837499"
+                    Point3="-121.874994104728,41.5087712837499" />
+                  <mssgle:LineSegment
+                    End="-121.874994104728,67.5175425674998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT_Load_STG_Customer\OLE DB Destination">
+    design-time-name="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2496,7 +2297,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT_Load_STG_Customer\OLE DB Destination 1">
+    design-time-name="Package\PKG_LOAD_STG_BRANCH\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2508,18 +2309,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="144,42.6666666666667"
-          Id="Package.EventHandlers[OnError]\ask FAILURE"
-          TopLeft="591.999982357026,141.99999576807" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
   <DtsEventHandler
     design-time-name="Package.EventHandlers[OnPreExecute]">
     <LayoutInfo>
@@ -2528,7 +2317,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package.EventHandlers[OnPreExecute]\Log_Task_Start"
-          TopLeft="380.999988645316,155.999995350838" />
+          TopLeft="421.99998742342,183.999994516373" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
@@ -2540,7 +2329,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="157.333333333334,42.6666666666667"
           Id="Package.EventHandlers[OnPostExecute]\Task SUCCESS"
-          TopLeft="313.999990642071,142.999995738268" />
+          TopLeft="450.999986559153,167.99999499321" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="144,42.6666666666667"
+          Id="Package.EventHandlers[OnError]\ask FAILURE"
+          TopLeft="465.999986112118,167.99999499321" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
